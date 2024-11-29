@@ -27,7 +27,7 @@ app.use(urlencoded({ extended: true }));
 
 // Cấu hình CORS
 const corsOptions = {
-    origin: [dotenv.config().parsed.PORT_CLIENT, "http://localhost:3000"],
+    origin: [dotenv.config().parsed.PORT_CLIENT, "http://localhost:3000", "social-network-client-coral.vercel.app"],
     credentials: true,
 };
 app.use(cors(corsOptions));
