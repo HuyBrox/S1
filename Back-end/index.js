@@ -30,7 +30,8 @@ const corsOptions = {
     origin: [dotenv.config().parsed.PORT_CLIENT, "http://localhost:3000"],
     credentials: true,
 };
-app.use(cors(corsOptions));
+app.use(cors());
+connectDB()
 
 // Tích hợp PeerServer vào Express
 const peerServer = ExpressPeerServer(server, {
@@ -55,6 +56,5 @@ app.use("/api", indexRouter);
 
 // Kết nối database và khởi động server
 server.listen(PORT, async () => {
-    await connectDB();
     console.log(`Server is running on port ${PORT}`);
 });
