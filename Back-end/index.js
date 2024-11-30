@@ -27,9 +27,9 @@ app.use(urlencoded({ extended: true }));
 
 // Cấu hình CORS
 const corsOptions = {
-    origin: '*',
+    origin: 'https://social-network-client-coral.vercel.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    // credentials: true,
+    credentials: true,
 };
 app.use(cors(corsOptions));
 await connectDB()
