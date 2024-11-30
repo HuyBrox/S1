@@ -27,7 +27,8 @@ app.use(urlencoded({ extended: true }));
 
 // Cấu hình CORS
 const corsOptions = {
-    origin: [dotenv.config().parsed.PORT_CLIENT, "http://localhost:3000"],
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 };
 app.use(cors());

@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
-const allowedOrigins = [process.env.PORT_CLIENT, 'http://localhost:3000'];
+const allowedOrigins = '*';
 const io = new Server(server, {
     cors: {
         origin: (origin, callback) => {
