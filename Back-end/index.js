@@ -29,10 +29,10 @@ app.use(urlencoded({ extended: true }));
 const corsOptions = {
     origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
+    // credentials: true,
 };
 app.use(cors(corsOptions));
-connectDB()
+await connectDB()
 
 // Tích hợp PeerServer vào Express
 const peerServer = ExpressPeerServer(server, {
