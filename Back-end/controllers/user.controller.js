@@ -163,14 +163,20 @@ export const login = async (req, res) => {
         }
         //Tạo token - tham số đầu tiên là payload, tham số thứ 2 là secret key
         const token = await jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
-        return res.cookie("token", token, {
-            httpOnly: true,     //cookie không thể được truy cập bằng mã JavaScript
-            // secure: true,       //cookie chỉ được gửi khi có https
-            sameSite: "strict", //cookie chỉ được gửi khi có cùng domain
-            maxAge: 1 * 10 * 60 * 60 * 1000, //5h
-        }).json({
+        // return res.cookie("token", token, {
+        //     httpOnly: true,     //cookie không thể được truy cập bằng mã JavaScript
+        //     // secure: true,       //cookie chỉ được gửi khi có https
+        //     sameSite: "strict", //cookie chỉ được gửi khi có cùng domain
+        //     maxAge: 1 * 10 * 60 * 60 * 1000, //5h
+        // }).json({
+        //     message: "Đăng nhập thành công",
+        //     success: true,
+        //     user,
+        // });
+        return res.status(200).json({
             message: "Đăng nhập thành công",
             success: true,
+            token,
             user,
         });
     } catch (error) {
