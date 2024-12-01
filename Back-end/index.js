@@ -27,7 +27,7 @@ app.use(urlencoded({ extended: true }));
 
 // Cấu hình CORS
 const corsOptions = {
-    origin: 'https://social-network-client-coral.vercel.app',
+    origin: ['https://social-network-client-coral.vercel.app' ,'https://clone-s5-3djx.vercel.app'],
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
     credentials: true,
 };
